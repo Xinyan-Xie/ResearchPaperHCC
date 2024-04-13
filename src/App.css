@@ -1,38 +1,51 @@
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr; /* Adjust these fractions based on your actual design needs */
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  padding: 20px;
+  height: 100vh; /* Assuming you want the app to fill the entire height of the viewport */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dimensionSelection {
+  grid-column: 1 / -1; /* This will span all columns */
+  background-color: #f0f0f0;
+  padding: 10px;
+  /* ... other styles ... */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.segmentView {
+  grid-column: 1 / 3; /* This will span the first two columns */
+  grid-row: 2; /* Positioned in the second row */
+  /* ... other styles ... */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.branchView {
+  grid-column: 3 / 5; /* This will span the third and fourth columns */
+  grid-row: 2; /* Positioned in the second row */
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Within the branch view, there are two columns */
+  grid-template-rows: auto; /* Row height will adjust to content */
+  gap: 10px;
+  background-color: #e9e9e9;
+  padding: 10px;
+  /* ... other styles ... */
 }
 
-.App-link {
-  color: #61dafb;
+.heightGraph {
+  grid-column: 1;
+  grid-row: 1;
+  /* ... other styles ... */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.spreadOfBranchesGraph {
+  grid-column: 1;
+  grid-row: 2;
+  /* ... other styles ... */
+}
+
+.branchTopView {
+  grid-column: 2;
+  grid-row: 1 / 3; /* Spans both rows */
+  /* ... other styles ... */
 }

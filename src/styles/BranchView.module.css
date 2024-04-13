@@ -1,0 +1,9 @@
+.branchView {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns, each taking half the space */
+  grid-template-rows: 1fr 1fr 1fr; /* Three rows, each taking half the vertical space */
+  gap: 10px;
+  background-color: #e9e9e9; /* Just for visibility */
+  padding: 10px;
+}
+  

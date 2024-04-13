@@ -1,0 +1,15 @@
+.segmentView {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    /* Adjust the styling to match the layout */
+  }
+  
+  .segmentView::-webkit-scrollbar, .branchView::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .segmentView::-webkit-scrollbar-thumb, .branchView::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 5px;
+  }
