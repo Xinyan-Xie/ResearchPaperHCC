@@ -8,10 +8,11 @@ import DayTenView from './DayTenView';
 const BranchView = () => {
   return (
     <div className={styles.branchView}>
-      <h2>Branch View</h2>
+       
       <HeightGraph />
       <SpreadOfBranchesGraph />
       <DayTenView />
+      <h2 class="branchTitle">Branch View</h2>
       {/* Insert additional components for the branch view */}
     </div>
   );

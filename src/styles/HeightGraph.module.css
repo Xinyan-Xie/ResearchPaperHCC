@@ -1,5 +1,5 @@
 .heightGraph {
-  grid-column: 1; /* Position the height graph on the left column */
-  grid-row: 1; /* Position the height graph on the first row */
-  /* Your styles for heightGraph */
+  grid-column: 1; /* First column */
+  grid-row: 2; /* First row */
+  border: 1px solid orange;
 }

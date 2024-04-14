@@ -1,5 +1,5 @@
 .spreadOfBranchesGraph {
-  grid-column: 1; /* Occupies the first column */
-  grid-row: 2; /* Occupies the second row, under the height graph */
-  /* Additional styling for the spread of branches graph */
+  grid-column: 1; /* First column */
+  grid-row: 3; /* Second row */
+  border: 1px solid pink;
 }

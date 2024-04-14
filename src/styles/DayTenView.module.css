@@ -1,5 +1,5 @@
 .DayTenView {
-    grid-column: 2; /* Position the day ten view on the right column */
-    grid-row: 1 / span 2; /* Make the day ten view span both rows */
-    /* Your styles for dayTenView */
-  }
+  grid-column: 2; /* Second column */
+  grid-row: 2 / 4; /* Span both rows */
+  border: 1px solid green;
+}
