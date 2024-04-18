@@ -1,8 +1,13 @@
 .segmentView {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-rows: 200px 100px;
     /* Adjust the styling to match the layout */
+  }
+
+  .SegmentTitle{
+  margin-bottom: 20px; /* Add space below the title */
+  grid-template-rows: 1fr;
+  display: top;
   }
   
   .segmentView::-webkit-scrollbar, .branchView::-webkit-scrollbar {
