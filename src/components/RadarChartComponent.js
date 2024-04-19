@@ -54,6 +54,12 @@ function RadarChart(container, data, options){
         .domain([0, maxValue]);
 
         //d3.select(container).select('svg').remove();
+    //Create the container SVG and g elements
+    // const svg = d3.select(id).append("svg")
+    //     .attr("width",  cfg.w + cfg.margin.left + cfg.margin.right)
+    //     .attr("height", cfg.h + cfg.margin.top + cfg.margin.bottom)
+    //     .append("g")
+    //     .attr("transform", "translate(" + (cfg.w/2 + cfg.margin.left) + "," + (cfg.h/2 + cfg.margin.top) + ")");
     
     //Circular segments
     const axisGrid = svg.append("g").attr("class", "axisWrapper");

@@ -1,115 +1,84 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/SegmentView.module.css';
-import VegetationIndexChart from './VegetationIndexChart';
 import RadarChartComponent from './RadarChartComponent';
 
-
-function fetchJsonData(setData) {
-  fetch('../data/HC2_C_7D_Info.json')
-      .then(response => response.json())
-      .then(json => {
-          // Process and transform the JSON data to the format expected by your radar chart
-          const processedData = transformDataForChart(json);
-          setData(processedData);
-      })
-      .catch(error => console.error('Failed to load JSON data', error));
+// Function to calculate the user-defined vegetation index
+function calculateVegetationIndex(data) {
+  // Placeholder function for your vegetation index calculation
+  return 0.5; // Example static value, adjust based on your actual calculation
 }
 
-function transformDataForChart(data) {
-  // Assuming we want to use `height`, `volume`, and `maxSpreadVal` from the `panicle` and segments
-  const segments = Object.values(data.segment); // Convert segments object to array
-  const chartData = segments.map(segment => ({
-      axis: "Segment",
-      value: segment.endHeight // Example: using endHeight as value
-  }));
+// Function to transform JSON data into a suitable format for the RadarChartComponent
+function transformDataForRadarChart(jsonData) {
+  const dataForChart = [
+    {
+      axis: "Height",
+      value: jsonData.panicle.height / 300, // Normalize the height
+    },
+    {
+      axis: "Volume",
+      value: jsonData.panicle.volume / 10000, // Normalize the volume
+    },
+    {
+      axis: "Spread",
+      value: jsonData.panicle.maxSpreadVal / 50, // Normalize the max spread
+    },
+    {
+      axis: "Branches",
+      value: Object.keys(jsonData.branch).length / 20, // Number of branches, normalized
+    },
+    {
+      axis: "Avg Red",
+      value: jsonData.panicle.colAvgR,
+    },
+    {
+      axis: "Avg Green",
+      value: jsonData.panicle.colAvgG,
+    },
+    {
+      axis: "Avg Blue",
+      value: jsonData.panicle.colAvgB,
+    },
+    {
+      axis: "Vegetation Index",
+      value: calculateVegetationIndex(jsonData), // Calculate the user-defined vegetation index
+    },
+  ];
 
-  // Add `panicle` data
-  chartData.push({
-      axis: "Panicle Height",
-      value: data.panicle.height
-  });
-
-  return [chartData]; // RadarChart might expect an array of arrays
+  return [dataForChart]; // RadarChart expects an array of these data arrays
 }
 
 const SegmentView = () => {
-
-  const [data, setData] = useState(null);
+  const [radarChartData, setRadarChartData] = useState(null);
 
   useEffect(() => {
-    fetchJsonData(setData);
-}, []);
-
-  var myData = [
-      [ // First dataset
-          {axis: "Strength", value: 0.59},
-          {axis: "Skill", value: 0.56},
-          {axis: "Health", value: 0.42},
-          {axis: "Speed", value: 0.34},
-          {axis: "Luck", value: 0.48},
-          {axis: "Luck", value: 0.48},
-          {axis: "Luck", value: 0.48},
-          {axis: "Luck", value: 0.48}
-      ],
-      [ // Second dataset
-          {axis: "Strength", value: 0.88},
-          {axis: "Skill", value: 0.27},
-          {axis: "Health", value: 0.26},
-          {axis: "Speed", value: 0.29},
-          {axis: "Luck", value: 0.65},
-          {axis: "Luck", value: 0.65},
-          {axis: "Luck", value: 0.65},
-          {axis: "Luck", value: 0.65},
-          
-      ]
-    ];
+    const url = '/data/HC2_C_7D_Info.json'; // Ensure this URL is correct and accessible
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        const processedData = transformDataForRadarChart(data);
+        setRadarChartData(processedData);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   return (
     <div className={styles.segmentView}>
-      {/* Insert additional components or HTML elements as needed */}
-      <h2 className='SegmentTitle'>Segment View</h2>
-      <RadarChartComponent data={data} />
-      {/* <VegetationIndexChart /> */}
-      {/* Repeat for other charts or visual elements in the Segment View */}
+      <h2 className={styles.segmentTitle}>Segment View</h2>
+      {radarChartData ? (
+        <RadarChartComponent data={radarChartData} />
+      ) : (
+        <p>Loading data...</p>
+      )}
     </div>
   );
 };
 
 export default SegmentView;
-
-
-
-// // SegmentView.js
-// import React from 'react';
-// import RadarChartComponent from './RadarChartComponent';
-
-// const SegmentView = () => {
-//   // Sample data
-// var myData = [
-//   [ // First dataset
-//       {axis: "Strength", value: 0.59},
-//       {axis: "Skill", value: 0.56},
-//       {axis: "Health", value: 0.42},
-//       {axis: "Speed", value: 0.34},
-//       {axis: "Luck", value: 0.48}
-//   ],
-//   [ // Second dataset
-//       {axis: "Strength", value: 0.88},
-//       {axis: "Skill", value: 0.27},
-//       {axis: "Health", value: 0.26},
-//       {axis: "Speed", value: 0.29},
-//       {axis: "Luck", value: 0.65}
-//   ]
-// ];
-
-//   return (
-//     <div className="segmentView">
-//       {/* other components */}
-//       <h1>Segment View</h1>
-//       {/* <RadarChartComponent data={myData} /> */}
-//     </div>
-//   );
-// };
-
-// export default SegmentView;
-
