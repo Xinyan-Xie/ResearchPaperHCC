@@ -1,8 +1,16 @@
 .dimensionSelection {
-    display: grid;
-    grid-template-rows: repeat(2, 100px);
-    gap: 10px;
+  position: relative;
+  border: 2px solid darkgray;
+  height: 300px;
+  width: 300px;
   }
   
+.DimensionTitle {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+    
   /* Add more detailed styling for DimensionSelection */
   

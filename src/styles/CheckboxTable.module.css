@@ -1,0 +1,15 @@
+/* .outerBox {
+    position: relative;
+    border: 2px solid darkgray;
+    height: 50px;
+    width: 300px;
+    margin: 20px;
+} */
+
+.selectionBox {
+    position: relative;
+    border: 2px solid darkgray;
+    height: 50px;
+    width: 250px;
+    margin: 20px;
+}
