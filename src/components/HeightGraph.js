@@ -5,10 +5,10 @@ const HeightGraph = () => {
   // The chart logic will go here
 
   return (
-    <div className={styles.heightGraph}>
-      {/* Render your height graph here */}
-      <h1>Height graph</h1>
-    </div>
+    console.log("branch Height")
+    // <div className={styles.heightGraph}>
+    //   <h1>Height graph</h1>
+    // </div>
   );
 };
 

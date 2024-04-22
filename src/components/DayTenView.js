@@ -3,9 +3,10 @@ import styles from '../styles/DayTenView.module.css';
 
 const DayTenView = () => {
   return (
-    <div className={styles.DayTenView}>
-      Day10
-    </div>
+    console.log("day 10")
+    // <div className={styles.DayTenView}>
+    //   Day10
+    // </div>
   );
 };
 
