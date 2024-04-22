@@ -72,11 +72,28 @@ const SegmentView = () => {
   return (
     <div className={styles.segmentView}>
       <h2 className={styles.segmentTitle}>Segment View</h2>
-      {radarChartData ? (
-        <RadarChartComponent data={radarChartData} />
-      ) : (
-        <p>Loading data...</p>
-      )}
+      <div className={styles.segmentIndividualTimeDiff}>
+        {radarChartData ? (
+          <RadarChartComponent data={radarChartData} />
+        ) : (
+          <p>Loading data...</p>
+        )}
+      </div>
+      <div className={styles.segmentTrtDiff}>
+        {radarChartData ? (
+          <RadarChartComponent data={radarChartData} />
+        ) : (
+          <p>Loading data...</p>
+        )}
+      </div>
+      <div className={styles.segmentGenoDiff}>
+        {radarChartData ? (
+          <RadarChartComponent data={radarChartData} />
+        ) : (
+          <p>Loading data...</p>
+        )}
+      </div>
+      
     </div>
   );
 };

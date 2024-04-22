@@ -1,20 +1,51 @@
 .segmentView {
-    display: grid;
-    grid-template-rows: 200px 100px;
-    /* Adjust the styling to match the layout */
+  position: relative;
+  border: 2px solid darkgray;
+  float: left;
+  height: 1280px;
+  width: 100%;
+    /* grid-template-rows: 200px 100px; */
   }
 
-  .SegmentTitle{
-  margin-bottom: 20px; /* Add space below the title */
-  grid-template-rows: 1fr;
-  display: top;
-  }
+
+.segmentTitle{
+  background-color: lightgrey;
+  height: 45px;
+  margin: 3px 2px 3px 2px;
+  text-align: center; 
+  font-size: 28px;
+  font-weight: normal;
+  /* margin-bottom: 20px;  */
+  /* grid-template-rows: 1fr; */
+  /* display: top; */
+}
+
+.segmentIndividualTimeDiff {
+  border: 2px solid darkgray;
+  width: 98%;
+  margin: 3px auto 3px auto;
+  height: 600px;
+}
+
+.segmentTrtDiff {
+  border: 2px solid darkgray;
+  width: 98%;
+  margin: 3px auto 3px auto;
+  height: 300px;
+}
+
+.segmentGenoDiff {
+  border: 2px solid darkgray;
+  width: 98%;
+  margin: 3px auto 3px auto;
+  height: 300px;
+}
   
-  .segmentView::-webkit-scrollbar, .branchView::-webkit-scrollbar {
+  /* .segmentView::-webkit-scrollbar, .branchView::-webkit-scrollbar {
     width: 5px;
-  }
+  } */
   
-  .segmentView::-webkit-scrollbar-thumb, .branchView::-webkit-scrollbar-thumb {
+  /* .segmentView::-webkit-scrollbar-thumb, .branchView::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     border-radius: 5px;
-  }
+  } */

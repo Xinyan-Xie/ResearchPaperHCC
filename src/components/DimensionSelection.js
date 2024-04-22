@@ -7,7 +7,7 @@ import CheckboxTable from './CheckboxTable';
 const DimensionSelection = () => {
   return (
     <div className={styles.dimensionSelection}>
-      <h2 className={styles.DimensionTitle}>Dimension Selection Content</h2>
+      <h2 className={styles.dimensionTitle}>Dimension Selection</h2>
       <CheckboxTable />
       {/* <ButtonGroup /> */}
     </div>

@@ -47,35 +47,39 @@ const CheckboxTable = () => {
 
   return (
     <div> 
-        <div className={styles.outerBox}>
-            {/* Genotype */}
-            <table className={styles.selectionBox}>
-                <tbody>
+
+        <div className={styles.checkboxWithDimName}>
+            <p className={styles.dimName}>Genotype</p>
+            <table className={styles.checkboxWithLabel}>
+                <thead>
                     <tr>
-                        <th>KIT</th> 
+                        <th>KIT</th>
                         <th>HO1</th>
                         <th>HO2</th>
                         <th>HC2</th>
                         <th>HC5</th>
                     </tr>
+                </thead>
+                
+                <tbody>
                     <tr>
-                        <td>
+                        <td className={styles.checkboxEach}>
                             <input type="checkbox" name="KIT" checked={checkedGenoState.KIT}
                             onChange={handleCheckboxGenoChange} />
                         </td>
-                        <td>
+                        <td className={styles.checkboxEach}>
                             <input type="checkbox" name="HO1" checked={checkedGenoState.HO1}
                             onChange={handleCheckboxGenoChange} />
                         </td>
-                        <td>
+                        <td className={styles.checkboxEach}>
                             <input type="checkbox" name="HO2" checked={checkedGenoState.HO2}
                             onChange={handleCheckboxGenoChange} />
                         </td>
-                        <td>
+                        <td className={styles.checkboxEach}>
                             <input type="checkbox" name="HC2" checked={checkedGenoState.HC2}
                             onChange={handleCheckboxGenoChange} />
                         </td>
-                        <td>
+                        <td className={styles.checkboxEach}>
                             <input type="checkbox" name="HC5" checked={checkedGenoState.HC5}
                             onChange={handleCheckboxGenoChange} />
                         </td>
@@ -84,48 +88,61 @@ const CheckboxTable = () => {
             </table>
         </div>
 
-        <table className={styles.selectionBox}>
-            <tbody>
-                <tr>
-                    <th>Control</th> 
-                    <th>HDNT</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" name="Control" checked={checkedTrtState.Control}
-                        onChange={handleCheckboxTrtChange} />
-                    </td>
-                    <td>
-                        <input type="checkbox" name="HDNT" checked={checkedTrtState.HDNT}
-                        onChange={handleCheckboxTrtChange} />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div className={styles.checkboxWithDimName}>
+            <p className={styles.dimName}>Treatment</p>
+            <table className={styles.checkboxWithLabel}>
+                <thead>
+                    <tr>
+                        <th>Control</th>
+                        <th>HDNT</th>
+                    </tr>
+                </thead>
 
-        <table className={styles.selectionBox}>
-            <tbody>
-                <tr>
-                    <th>D4</th> 
-                    <th>D7</th>
-                    <th>D10</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" name="D4" checked={checkedTimeState.D4}
-                        onChange={handleCheckboxTimeChange} />
-                    </td>
-                    <td>
-                        <input type="checkbox" name="D7" checked={checkedTimeState.D7}
-                        onChange={handleCheckboxTimeChange} />
-                    </td>
-                    <td>
-                        <input type="checkbox" name="D10" checked={checkedTimeState.D10}
-                        onChange={handleCheckboxTimeChange} />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                <tbody>
+                    <tr>
+                        <td className={styles.checkboxEach}>
+                            <input type="checkbox" name="Control" checked={checkedTrtState.Control}
+                            onChange={handleCheckboxTrtChange} />
+                        </td>
+                        <td className={styles.checkboxEach}>
+                            <input type="checkbox" name="HDNT" checked={checkedTrtState.HDNT}
+                            onChange={handleCheckboxTrtChange} />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            
+        <div className={styles.checkboxWithDimName}>
+            <p className={styles.dimName}>Time Sequence</p>
+            <table className={styles.checkboxWithLabel}>
+                <thead>
+                    <tr>
+                        <th>D4</th>
+                        <th>D7</th>
+                        <th>D10</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td className={styles.checkboxEach}>
+                            <input type="checkbox" name="D4" checked={checkedTimeState.D4}
+                            onChange={handleCheckboxTimeChange} />
+                        </td>
+                        <td className={styles.checkboxEach}>
+                            <input type="checkbox" name="D7" checked={checkedTimeState.D7}
+                            onChange={handleCheckboxTimeChange} />
+                        </td>
+                        <td className={styles.checkboxEach}>
+                            <input type="checkbox" name="D10" checked={checkedTimeState.D10}
+                            onChange={handleCheckboxTimeChange} />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
         
     </div>
         

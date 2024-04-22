@@ -1,5 +1,6 @@
 .branchView {
-  grid-column: 3 / 5; /* This will span the third and fourth columns */
+  grid-column: 3 / 5; 
+  /* This will span the third and fourth columns */
   /* grid-row: 2; Positioned in the second row */
   display: grid;
   grid-template-columns: 200px 200px; /* Within the branch view, there are two columns */
